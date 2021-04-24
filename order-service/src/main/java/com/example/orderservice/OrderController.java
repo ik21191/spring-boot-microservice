@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,13 +19,21 @@ public class OrderController {
             new Order(3, 2, "Product C"),
             new Order(4, 1, "Product D"),
             new Order(5, 2, "Product E"));
+    
+    private final Environment environment;
+
+    @Autowired
+    public OrderController(final Environment environment) {
+        this.environment = environment;
+    }
 
     /*@GetMapping
     public List<Order> getAllOrders() {
         return orders;
     }*/
     
-    @GetMapping
+    /* Below is the modified version of this method
+     * @GetMapping
     public List<Order> getAllOrders(@RequestParam(required = false) Integer customerId) {
         if (customerId != null) {
             return orders.stream()
@@ -32,6 +42,19 @@ public class OrderController {
         }
 
         return orders;
+    }*/
+    
+    @GetMapping
+    public ResponseWrapper<List<Order>> getAllOrders(@RequestParam(required = false) Integer customerId) {
+        if (customerId != null) {
+            return new ResponseWrapper<>(
+                    environment,
+                    orders.stream()
+                            .filter(order -> customerId.equals(order.getCustomerId()))
+                            .collect(Collectors.toList()));
+        }
+
+        return new ResponseWrapper<>(environment, orders);
     }
 
     @GetMapping("/{id}")
