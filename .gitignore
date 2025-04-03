@@ -1,0 +1,7 @@
+customer-service/.classpath
+customer-service/.project
+customer-service/.settings/**
+customer-service/target/**
+gateway-service/target/**
+order-service/target/**
+discovery-service/target/**
