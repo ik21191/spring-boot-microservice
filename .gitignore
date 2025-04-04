@@ -5,3 +5,17 @@ customer-service/target/**
 gateway-service/target/**
 order-service/target/**
 discovery-service/target/**
+discovery-service/.gitignore
+discovery-service/.settings/**
+gateway-service/.classpath
+gateway-service/.project
+gateway-service/.settings/**
+discovery-service/.classpath
+customer-service/.gitignore
+order-service/.classpath
+order-service/.project
+order-service/.settings/**
+order-service/.gitignore
+
+.project
+.settings/**
