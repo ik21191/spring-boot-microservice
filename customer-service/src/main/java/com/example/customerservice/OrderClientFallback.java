@@ -1,4 +1,4 @@
-package com.example.customerservice;
+/*package com.example.customerservice;
 
 import java.util.Collections;
 
@@ -14,3 +14,4 @@ public class OrderClientFallback implements OrderClient {
     return Collections.emptyList();
   }
 }
+*/
