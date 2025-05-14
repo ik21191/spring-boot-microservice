@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.10.RELEASE</version>
+		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
@@ -16,60 +16,62 @@
 	<description>Demo project for Spring Boot</description>
 	
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-     <maven.compiler.target>1.8</maven.compiler.target>
-		<spring-cloud.version>Hoxton.SR11</spring-cloud.version>
-	</properties>
-	
-	<dependencyManagement>
-    <dependencies>
-      <!--<dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.10.RELEASE</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>-->
-      
-	<dependency>
-		<groupId>org.springframework.cloud</groupId>
-		<artifactId>spring-cloud-dependencies</artifactId>
-		<version>${spring-cloud.version}</version>
-		<type>pom</type>
-		<scope>import</scope>
-	</dependency>
-   </dependencies>
-   
-  </dependencyManagement>
-	
-	<dependencies>
-		<dependency>
+    <java.version>17</java.version>
+    <spring-cloud.version>2024.0.1</spring-cloud.version>
+  </properties>
+  <dependencies>
+  <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    
+    <!--For service communication-->
+    <dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+	<!--For service communication end-->
+	
+	<!--Fault tolerance using Resillence4j-->
+		<dependency>
+    		<groupId>io.github.resilience4j</groupId>
+    		<artifactId>resilience4j-spring-boot2</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-		
-		<dependency>
- 			<groupId>org.springframework.cloud</groupId>
- 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
- 		</dependency>
-				
-	</dependencies>
+	<!--Fault tolerance using Resillence4j-->
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+	
+	
 
 	<build>
 		<plugins>
@@ -77,14 +79,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!--<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<!--<version>2.3.2</version>-->
+				<version>2.3.2</version>
 				<configuration>
 					<source>8</source>
 					<target>8</target>
 				</configuration>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</build>
 

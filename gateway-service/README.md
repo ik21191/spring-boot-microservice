@@ -1,17 +1,17 @@
 # gateway-service
 
-**Compatible java version 1.8**
+**Compatible java version 17**
 
 This application is working as a Gateway for this micr-oservice architecture. Through this gateway, we are providing single a single entry point for all the micro-services.
 
 This gateway is also registered itself with the registry service when it is started by calling below **Eureka Server** end point, after that the gateway will be aware of all the services registered with the service registry.
 
-`eureka.client.serviceUrl.defaultZone=http://localhost:3000/eureka/`
+`eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/`
 
 Below technology stacks are used for this application
 
 1. Maven `apache-maven-3.9.9`
-2. JDK `1.8`
+2. JDK `17`
 
 Steps to run the application
 

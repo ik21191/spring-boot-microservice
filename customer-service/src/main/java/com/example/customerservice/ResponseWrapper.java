@@ -1,4 +1,4 @@
-package com.example.orderservice;
+package com.example.customerservice;
 
 import org.springframework.core.env.Environment;
 

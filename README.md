@@ -1,6 +1,6 @@
 # spring-boot-microservice
 
-- java8 is the compatible version for this application.
+- java17 is the compatible version for this application.
 
 - You can run `run.bat` file to launch all application
 

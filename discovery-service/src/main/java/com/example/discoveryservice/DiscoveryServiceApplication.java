@@ -25,7 +25,7 @@ public class DiscoveryServiceApplication {
     SpringApplication.run(DiscoveryServiceApplication.class, args);
   }
 
-  @Scheduled(fixedRate = 10000) // Check every 60 seconds
+  //@Scheduled(fixedRate = 10000) // Check every 60 seconds
   public void checkServiceHealth() {
     System.out.println("checkServiceHealth() is called.");
     List<String> instances = discoveryClient.getServices();
