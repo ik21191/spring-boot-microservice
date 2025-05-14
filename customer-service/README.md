@@ -1,6 +1,6 @@
 # customer-service
 
-**Compatible java version 1.8**
+**Compatible java version 17**
 
 Below technology stacks are used for this application
 
