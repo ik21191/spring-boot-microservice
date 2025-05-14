@@ -5,7 +5,7 @@
 Below technology stacks are used for this application
 
 1. Maven `apache-maven-3.9.9`
-2. JDK `1.8`
+2. JDK `17`
 
 Steps to run the application
 
