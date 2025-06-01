@@ -31,6 +31,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    
+    <!-- For Kubernetes -->
+		<dependency>
+  			<groupId>org.springframework.cloud</groupId>
+  			<artifactId>spring-cloud-starter-kubernetes-fabric8-all</artifactId>
+		</dependency>
   </dependencies>
   
   <dependencyManagement>
@@ -46,6 +52,7 @@
   </dependencyManagement>
 
 	<build>
+	<finalName>discovery-service</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
