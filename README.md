@@ -1,8 +1,10 @@
 # spring-boot-microservice
 
-- java17 is the compatible version for this application.
+- java21 is the compatible version for this application.
 
-- You can run `run.bat` file to launch all application
+- You can run `run.bat` file to launch all application.
+
+- If `docker` is installed on your machine then you can spin up all the applications by reading `README.md` of this repository [url](https://github.com/ik21191/gcp/tree/main/docker/spring-boot-microservices).
 
 - If you are going to run these services manually then follow below sequence
 
